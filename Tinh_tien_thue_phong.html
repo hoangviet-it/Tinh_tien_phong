@@ -1,0 +1,122 @@
+<!doctype html />
+<html>
+	<head>
+		<meta charset=UTF-8>
+		<meta name= "description" content = "Lập trình web font-end ">
+		<meta name= "keywords" content= "HTML, CSS, XML, JavaScript">
+		<meta name = "author" content = "Phạm Hoàng Việt">
+		<title>Phạm Hoàng Việt - 191A010025</title>
+		<style>
+            *{
+                margin: 0px;
+                padding: 0px;
+            }
+            .container{
+                border: 3px solid #00CC00;
+                border-radius: 10px;
+                box-shadow: 5px 5px #444;
+                width: 500px;
+                height: 220px;
+                margin: 0 auto;
+                margin-top: 150px;
+            }
+            h2{
+                margin: 20px 0 20px 0;
+                display: inline;
+            }
+            input{
+                margin: 0;
+                width: 250px;
+                height: 30px;
+                font-size: 20px;
+            }
+            #so_ngay{
+                margin-left: 30px;
+            }
+            .sn{
+                padding: 20px 0 30px 30px;
+            }
+            .lp{
+                padding: 20px 0 30px 30px;
+            }
+            #sum{
+                font-size: 20px;
+                font-weight: bold;
+                padding: 7px;
+                background-color: rgb(173, 100, 209);
+                color: #fff;
+                border: none;
+                float: left;
+                margin: 0 90px 20px 30px;
+                box-shadow: 5px 5px #444;
+                border-radius: 5px;
+            }
+            #sum:hover{
+                background-color: rgb(153, 40, 209);
+            }
+            h1{
+                color: red;
+            }
+        </style>
+	</head>
+	<body>
+        <div class="container">
+            <div class="sn">
+                <h2>Nhập số ngày:</h2>
+                <input type="text" Name = "so_ngay" id="so_ngay"><br>
+            </div>
+            <div  class="lp">
+                <h2>Nhập loại phòng:</h2>
+                <input type="text" Name = "loai_phong" id="loai_phong">
+            </div>
+            <button id="sum">Tính tiền</button>
+            <h1 id="thanhtien"></h1>
+            <script language="javascript">
+                var button = document.getElementById("sum");
+                sum.onclick = function tien_phong (){
+                    
+                    var songay, loaiphong, tongtien, tiengiam, thanhtien;
+                    songay = document.getElementById("so_ngay").value;
+                    loaiphong = document.getElementById("loai_phong").value;
+
+                    if(loaiphong==="A"){
+                        if(songay>12){
+                            tongtien = 250000*songay;
+                            tiengiam = tongtien*(10/100);
+                            thanhtien =  tongtien-tiengiam;    
+                        }
+                        else {
+                            tongtien = 250000*songay;
+                            thanhtien = tongtien;
+                        }
+                    }
+                    
+                    if(loaiphong==="B"){
+                        if(songay>12){
+                            tongtien = 200000*songay;
+                            tiengiam = tongtien*(8/100);
+                            thanhtien =  tongtien-tiengiam;    
+                        }
+                        else {  
+                            tongtien = 200000*songay;
+                            thanhtien =  tongtien;    
+                        }
+                    }
+                    
+                    if(loaiphong==="C"){
+                        if(songay>12){
+                            tongtien = 150000*songay;
+                            tiengiam = tongtien*(8/100);
+                            thanhtien =  tongtien-tiengiam;    
+                        }
+                        else {
+                            tongtien = 150000*songay;
+                            thanhtien =  tongtien;  
+                        }
+                    }
+                    document.getElementById("thanhtien").innerHTML= thanhtien;
+                }
+            </script>
+        </div>
+	</body>
+</html>
